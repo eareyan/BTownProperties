@@ -1,0 +1,23 @@
+/* 
+    Document   : ie.css
+    Created on : Dec 6, 2011, 7:29:43 AM
+    Author     : mercerjd
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#menu li {
+background-color: red !important;
+padding-left: 0 !important;
+padding-right: 0 !important;
+clear: none !important;
+}

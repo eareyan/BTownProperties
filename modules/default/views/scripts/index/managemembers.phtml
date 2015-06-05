@@ -1,0 +1,18 @@
+<h2>Manage Members</h2>
+
+<?php
+    class MemberTable extends library_view_helper_Tabler {
+        public function formatRow($row) {
+            $edithref = Zend_Registry::get('ROOTURL')."index/editmember/id/".$row['memberId'];
+            $deletehref = Zend_Registry::get('ROOTURL')."index/deletemember/id/".$row['memberId'];            
+            $ret  = "<td>" . $row['lname'] . ', ' . $row['fname'] . "</td>";
+            $ret .= "<td>" . $row['email'] . "</td>";
+            $ret .= '<td>' . "<a href=\"$edithref\">Edit</a>" . '</td>';
+            $ret .= '<td>' . "<a href=\"$deletehref\">Delete</a>" . '</td>';
+            return $ret;
+        }       
+    }
+
+    $tabler = new MemberTable();
+    echo $tabler->showTable($this->paginator, $this, 'memberTable', array('Name', 'Email'));
+?>

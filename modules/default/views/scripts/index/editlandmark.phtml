@@ -1,0 +1,24 @@
+<h3>Edit Landmark</h3>
+<!--h4>
+    Please consult to Google Earth for accurate geocoding.
+</h4-->
+<form enctype="application/x-www-form-urlencoded" action="" method="post">
+    <fieldset id="fieldset-landmark">
+        <legend>Landmark</legend>
+        <?=$this->form->name?><br/>
+        <?=$this->form->lat?><br/>
+        <?=$this->form->lng?><br/>
+        <?=$this->form->Update?>
+    </fieldset>
+</form>
+
+<div id="map" class="right propertyImage">
+    <div id="propertyMap">
+        <span class="lat"><?=$this->form->lat->getValue()?></span>
+        <span class="lng"><?=$this->form->lng->getValue()?></span>
+        <span class="name"><?=$this->form->name->getValue()?></span>
+        <span class="address"></span>
+    </div>
+</div>
+
+<div id="map_canvas" class="map-position2"></div>

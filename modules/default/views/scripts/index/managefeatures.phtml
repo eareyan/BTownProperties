@@ -1,0 +1,24 @@
+<h2>Manage Features</h2>
+
+<form enctype="application/x-www-form-urlencoded" action="" method="post">
+    <fieldset id="fieldset-feature">
+        <legend>Add Feature</legend>
+        <label for="name" class="required">Name:</label>
+        <input type="text" name="name" id="name" value="">
+        <input type="submit" name="Submit" id="Submit" value="Submit">
+    </fieldset>
+</form>
+
+<?php
+    class FeatureTable extends library_view_helper_Tabler {
+        public function formatRow($row) {
+            $deletehref = Zend_Registry::get('ROOTURL')."index/deletefeature/id/".$row['featureId'];
+            $ret  = '<td>' . $row['name'] . '</td>';
+            $ret .= '<td>' . "<a href=\"$deletehref\">Delete</a>" . '</td>';
+            return $ret;
+        }       
+    }
+
+    $tabler = new FeatureTable();
+    echo $tabler->showTable($this->paginator, $this, 'featureTable', array('Features'));
+?>

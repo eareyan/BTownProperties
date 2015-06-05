@@ -1,0 +1,8 @@
+<h3>Welcome to BTown!</h3>
+<?php if(isset($this->loggedOut) && $this->loggedOut):?>
+    <div class="success">You have been successfully logged out!</div>
+<?php endif; ?>
+
+    <h3>Start Browsing the properties...</h3>
+
+<?=$this->DisplayProperties($this->paginator,$this,$this->DisplayPropertiesOptions)?>

@@ -1,0 +1,14 @@
+<h3>Feature Watchlist</h3>
+
+<form enctype="application/x-www-form-urlencoded" action="" method="post">
+    <fieldset id="fieldset-group3">
+        <?= $this->form->features ?>
+    </fieldset>
+    <br clear="both"/>
+    <fieldset id="fieldset-submitInfo">
+        <!--label for="Save" class="optional">Save</label-->
+        <input type="submit" name="Save" id="Save" value="Save">
+    </fieldset>
+</form>
+
+<?=$this->DisplayProperties($this->result,$this,array('showWatchlist'=>false, 'hideLinks'=>true))?>

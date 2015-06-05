@@ -1,0 +1,46 @@
+<h3>Edit a Property</h3>
+
+<form enctype="multipart/form-data" action="" method="post">
+    <fieldset id="fieldset-location">
+        <legend>Location</legend>
+        <p class="fs_left">
+            <?= $this->formProperty->name ?><br/>
+            <?= $this->formProperty->description ?><br/>
+            <?= $this->formProperty->address1 ?><br/>
+            <?= $this->formProperty->address2 ?><br/>
+            <?= $this->formProperty->city ?><br/>
+            <?= $this->formProperty->state ?><br/>
+            <?= $this->formProperty->zipcode ?><br/>
+        </p>
+        <p class="fs_right">
+           <div id="photo">
+                <?php if(!$this->data[0]['photo']): ?>
+                    <image class="propertyImage" src="<?=Zend_Registry::get("ROOTPATH")?>images/no-image.jpg"/>
+                <?php else: ?>
+                    <image class="propertyImage" src="<?=Zend_Registry::get("ROOTPATH") . 'photos/p1_' . $this->data[0]['photo']?>"/>
+                <?php endif; ?>
+            </div>
+            <?= $this->formProperty->photo ?><br/>
+        </p>
+    </fieldset>
+    
+    <fieldset id="fieldset-details">
+        <legend>Details</legend>
+        <?= $this->formProperty->price ?><br/>
+        <?= $this->formProperty->type ?><br/>
+        <?= $this->formProperty->bedrooms ?><br/>
+        <?= $this->formProperty->baths ?><br/>
+    </fieldset>
+
+    
+    <fieldset id="fieldset-featuresInfo">
+        <legend>Features</legend>
+        <?= $this->formProperty->features ?><br/>
+    </fieldset>
+
+    <fieldset id="fieldset-submitInfo">
+        <label for="Upload" class="optional">Upload</label>
+        <input type="submit" name="Upload" id="Upload" value="Upload">
+    </fieldset>
+
+</form>

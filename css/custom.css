@@ -1,0 +1,410 @@
+/* 
+    Document   : jayz.css
+    Created on : Nov 13, 2011, 11:00:40 AM
+    Author     : mercerjd
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/**********************************************/
+/*** Main ***/
+/**********************************************/
+
+body {
+    background-color: #d2d5ba;
+    text-align: left;
+}
+
+label {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+#wrapper {
+    width:1024px;
+    margin-left: auto ;
+    margin-right: auto ;    
+}
+
+#content { 
+    color:#000;
+    width:1024px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    background-color: #B6FDA0;
+    background-color: #585b2e;
+    background-color: #787b4e;
+    background-color: #989b6e;
+}
+
+#content form {
+    padding: 10px 10px;    
+    background-color: #a8ab8e;
+}
+
+#content form dd {
+    margin: 0 0px;    
+    padding: 0 0px;    
+}
+
+#content fieldset {
+    padding-top: 10px;    
+    padding-bottom: 10px;    
+}
+
+#content fieldset label {
+    /*margin: 10px 10px 0 10px;*/
+    margin-left:10px;
+}
+
+#content fieldset legend {
+    font-weight: bold;
+}
+
+#content form input[type=text], #content form input[type=password], #content form textarea {
+    width:350px;
+    margin: 0 10px 10px 10px;
+    padding: 0 0;
+}
+
+#content form input[type=submit] {
+    margin: 0 10px 10px 10px;
+    padding: 0 0;
+}
+
+#fieldset-submitInfo,#fieldset-buttonGroup{
+    width: 350px;
+    text-align: center;
+}
+
+#content h3 {
+    text-align: center;
+    color: #000;
+}
+
+/**********************************************/
+
+.left {
+    float:left;
+    width:490px;
+}
+
+.right {
+    float:right;
+    width:490px;
+    width:690px;
+}
+
+.bottom {
+    float:right;
+    width:980px;
+}
+
+/**********************************************/
+/*** Zend ***/
+/**********************************************/
+
+ul.errors {
+    position:relative;
+     margin-left:10px;
+     color:#ff0000;
+     font-weight: bold;
+     top:-10px;
+}
+
+/**********************************************/
+
+.paginationControl {
+    text-align:right;
+}
+
+.supportingText {
+    min-height: 600px;
+}
+
+/**********************************************/
+/*** Login ***/
+/**********************************************/
+
+#loginStatus {
+    margin-left: 40px;
+}
+
+#loginStatus p {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+/**********************************************/
+/*** Footer ***/
+/**********************************************/
+
+#footer {
+    text-align: center;
+    width:100%;
+    height:auto;
+    margin:10px 10px;
+    padding:10px 10px;
+    background-color: #fff;
+    color: #000;
+
+}
+#footer p {
+    margin:0 0;
+    padding:0 0;
+}
+
+#footer a {
+    margin:0 0;
+    padding:0 0;
+    padding-top:4px;
+    color: #000;
+}
+
+/**********************************************/
+/*** Tables ***/
+/**********************************************/
+
+thead td {
+    font-weight: bold;
+}
+
+tbody td {
+    padding:4px 4px;
+}
+
+/**********************************************/
+
+table#displayProperties {
+    background-color: #fffff6;
+}
+
+/**********************************************/
+/*** PROPERTY SEARCH ***/
+/**********************************************/
+
+form#propertySearchForm {
+    margin:20px 20px;
+    height:300px;
+    width:960px;
+}
+
+/**** Group 1 ***/
+#fieldset-group1 {
+    margin-top:20px;
+    margin-left:20px;
+    margin-bottom:20px;
+    margin-right:20px;
+    width:434px;
+    height:100px;
+    float:left;    
+}
+
+/**** Group 2 ***/
+#fieldset-group2 {
+    margin:20px 20px;
+    width:434px;
+    height:100px;
+    float:left;      
+}
+
+/**** Group 3 ***/
+#fieldset-group3 {
+    margin:20px 20px;
+    padding-bottom: 10px;
+    width:auto;
+    height:auto;
+    float:left;        
+}
+
+label[for=features] {
+    display:block;
+}
+
+#fieldset-group3 label{
+    text-align: left;
+}
+
+#fieldset-group3 label input{
+    width:20px;
+}
+
+/**** Group Buttons ***/
+#fieldset-buttonGroup {
+    width:100%;
+    float:left;        
+}
+
+/**********************************************/
+/*** PROPERTY VIEW ***/
+/**********************************************/
+
+.propertyView {
+    Xfloat: left;
+    background-color: #fff;
+}
+
+.propertyView dl {
+}
+
+.propertyView dt {
+     margin-left:10px;
+     color:#000;
+     font-weight: bold;
+}
+.propertyView dd {
+     margin-left:20px;
+     margin-bottom: 10px;
+     width:500px;
+}
+
+img.propertyImage {
+    width:400px;
+    height: 400px;
+    float:left;
+    margin: 0 20px 20px 20px;
+    float:right;
+}
+
+img.propertyThumb {
+    width:100px;
+    height: 100px;
+    float:left;
+    margin: 0 20px 20px 20px;
+}
+
+#photo {
+    float:right;
+}
+
+#explanation {
+    xheight:430px !important;
+}
+
+#options{
+    margin-top: 25px;
+}
+
+.review{
+    border:1px solid black;
+    width: 350px;
+    padding: 15px;
+    xfloat: left;
+    margin:5px;
+}
+#bottomOptions{
+    width: 100%;
+    margin-top: 25px;
+    xfloat: left;
+}
+#bottomOptions ul li{
+    margin-left: 50px;
+}
+h2{
+    padding: 20px;
+}
+
+/**********************************************/
+/*** PROPERTY ***/
+/**********************************************/
+p.fs_left label {
+    float:left;
+    width:80px;
+    clear:both;
+    margin:0 0;
+    padding: 0 0;
+}
+
+p.fs_right {
+    float:right;
+}
+
+/**********************************************/
+/*** PROPERTY UPLOAD ***/
+/**********************************************/
+
+p.fs_left {
+    float:left;
+}
+
+p.fs_right {
+    float:right;
+}
+
+form ul,ol,li{
+    clear:both;
+    width:250px;
+    padding:5px;
+}
+
+/**********************************************/
+/*** LANDMARK ***/
+/**********************************************/
+
+#landmarkForm label {
+    float: left;
+    width:80px;
+}
+
+
+/**********************************************/
+/*** Map ***/
+/**********************************************/
+
+.lat, .lng, .name, .address {
+    display:none;
+}
+
+#map_canvas2 {
+    position:absolute;
+    width: 300px;
+    height:300px !important;
+    z-index: 10;
+    left:860px;
+    top:256px;
+}
+
+#map_canvas {
+    position:absolute;
+    width: 400px;
+    height:400px !important;
+    z-index: 10;
+    left:728px;
+    left:808px;
+    top:256px;
+}
+/**********************************************/
+/*** Landmark ***/
+/**********************************************/
+
+#fieldset-landmark {
+height:450px;
+}
+
+/**********************************************/
+/*** Misc ***/
+/**********************************************/
+
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    /*background-position: 10px center;*/
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../images/Knob Info.png');
+}
+.success {
+    font-size: larger;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../images/Knob Valid Green.png');
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../images/Knob Attention.png');
+}

@@ -1,0 +1,30 @@
+<h3>Search the Properties' Database</h3>
+
+<form id="propertySearchForm" enctype="application/x-www-form-urlencoded" action="" method="post">
+
+    <fieldset id="fieldset-group1">
+        <?= $this->form->searchTerm ?><br/>
+        <?= $this->form->type ?><br/><br/>
+        <?= $this->form->miles ?>
+        <?= $this->form->landmark ?>
+    </fieldset>
+
+    <fieldset id="fieldset-group2">
+        <?= $this->form->maxPrice ?>
+        <?= $this->form->bedrooms ?>
+        <?= $this->form->bath ?>
+    </fieldset>
+
+    <fieldset id="fieldset-group3">
+        <?= $this->form->features ?>
+    </fieldset>
+    <br clear="both"/>
+
+    <fieldset id="fieldset-buttonGroup">
+        <?= $this->form->Search ?>
+    </fieldset>
+    
+</form>
+
+<br clear="both"/>
+<?=$this->DisplayProperties($this->result,$this,$this->DisplayPropertiesOptions)?>

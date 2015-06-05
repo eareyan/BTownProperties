@@ -1,0 +1,114 @@
+<?php
+    $photo = $this->property_data['photo'];
+    $imgSrc = (!$photo) ? 'images/no-image.jpg' : 'photos/p' . $this->property_data['propertyId'] . '_' . $photo;
+    $imgSrc = Zend_Registry::get("ROOTPATH") . $imgSrc;
+?>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#propertyPhoto,#photoLink').fancybox({
+                    'width'				: '400px',
+                    'height'			: '400px',
+                    'autoScale'			: false,
+
+                    'titlePosition': 'inside',
+                    'titlePosition'		: 'outside',
+                    'overlayColor'		: '#999',
+                    'overlayOpacity'	: 0.9
+                });
+            });
+        </script>
+
+
+<div id="supportingText" class="propertyView">
+    <h2><?=$this->property_data['name']?></h2>
+    <?php if(false): ?>
+    <div id="photo">
+        <?php if(!$this->property_data['photo']): ?>
+            <image class="propertyImage" src="<?=Zend_Registry::get("ROOTPATH")?>images/no-image.jpg"/>
+        <?php else: ?>
+            <image class="propertyImage" src="<?= Zend_Registry::get("ROOTPATH") . 'photos/p' . $this->property_data['propertyId'] . '_' . $this->property_data['photo'] ?>"/>
+        <?php endif; ?>
+    </div>
+    <?php else: ?>
+    <div id="map" class="right propertyImage">
+        <div id="propertyMap">
+            <span class="lat"><?=$this->property_data['lat']?></span>
+            <span class="lng"><?=$this->property_data['lng']?></span>
+            <span class="name"><?=$this->property_data['name']?></span>
+            <span class="address"><?=library_classes_LatLng::formatGeoAddress2($this->property_data)?></span>
+        </div>
+    </div>
+    <?php endif; ?>
+    <div id="explanation">
+        <dl>
+            <dt><a id="photoLink" href="<?= $imgSrc ?>">Click to enlarge.</a></dt>
+            <dd><a id="propertyPhoto" href="<?= $imgSrc ?>"><img class="propertyThumb" alt="example1" src="<?= $imgSrc ?>" /></a></dd>
+            
+            <dt>Name</dt>
+            <dd><?=$this->property_data['name']?></dd>
+
+            <dt>Description</dt>
+            <dd><?=$this->property_data['description']?></dd>
+
+            <dt>Address:</dt>
+            <dd><?=library_classes_LatLng::formatGeoAddress2($this->property_data)?></dd>
+
+            <dt>Price</dt>
+            <dd>$<?=number_format($this->property_data['price'])?></dd>
+
+            <dt>Type</dt>
+            <dd><?=$this->property_data['type']?></dd>
+
+            <dt>Bedrooms</dt>
+            <dd><?=$this->property_data['bedrooms']?></dd>
+
+            <dt>Baths</dt>
+            <dd><?=$this->property_data['baths']?></dd>
+
+            <?php if(count($this->features_list)):?>
+                <dt>Features</dt>
+                <dd>
+                    <?php foreach($this->features_list as $id=>$feature):?>
+                    <?=$feature['name']?><br/>
+                    <?php endforeach;?>
+                </dd>
+            <?php endif;?>
+
+                <dt>Reviews</dt>
+            <?php if(count($this->reviews_list)):?>
+                    <?php foreach($this->reviews_list as $id=>$review):?>
+                <dd class="review">
+                    The user: <b><?=$review['nickname']?></b>, reviewed this property:<br/>
+                    Rating (1 out of 10): <b><?=$review['rating']?></b><br/>
+                    Comment: <?=$review['comment']?><br/>
+                </dd>
+                    <?php endforeach;?>
+            <?php else:?>
+                <dd class="review">
+                        At the moment, there are no reviews for this property.<br><br>
+                        Be the first one to review it by clicking the option below.
+                </dd>
+            <?php endif;?>
+        </dl>
+        <div id="map_canvas" class="map-position2"></div>
+        <div id="bottomOptions">
+            <h2 id="options">Options</h2>
+        <?php if($this->allow_edit):?>
+            <ul>
+                <li><a href='<?=Zend_Registry::get("ROOTURL")?>properties/member/edit/id/<?=$this->property_data['propertyId']?>'>Edit this property</a></li>
+                <li><a href='<?=Zend_Registry::get("ROOTURL")?>properties/member/delete/id/<?=$this->property_data['propertyId']?>'>Delete this property</a></li>
+            </ul>
+        <?php elseif(isset($this->memberOptions)):?>
+            <ul>
+                <li><a href='<?=Zend_Registry::get("ROOTURL")?>properties/member/contact/id/<?=$this->property_data['propertyId']?>'>Contact the owner of this property</a></li>
+                <li><a href='<?=Zend_Registry::get("ROOTURL")?>properties/member/review/id/<?=$this->property_data['propertyId']?>'>Review this property</a></li>
+            </ul>
+        <?php else:?>
+            <div class='info'>
+                    Do you want to review this property? or contact this property's owner?
+                    <a href='<?=Zend_Registry::get("ROOTURL")?>members/index/signup'>Sign up</a> or <a href='<?=Zend_Registry::get("ROOTURL")?>members/index/login'>Login</a> to enjoy this services!
+            </div>
+        <?php endif; ?>
+        </div>
+    </div>
+</div>

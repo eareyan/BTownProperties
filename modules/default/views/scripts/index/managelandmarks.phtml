@@ -1,0 +1,40 @@
+<h2>Manage Landmarks</h2>
+
+<form id="landmarkForm" enctype="application/x-www-form-urlencoded" action="" method="post">
+    <fieldset id="fieldset-landmark">
+        <legend>Add Landmark</legend>
+        <?=$this->form->name?><br/>
+        <?=$this->form->address1?><br/>
+        <?=$this->form->address2?><br/>
+        <?=$this->form->city?><br/>
+        <?=$this->form->state?><br/>
+        <?=$this->form->zipcode?><br/>
+        <input type="submit" name="Submit" id="Submit" value="Submit">    
+    </fieldset>
+
+<div id="map" class="right propertyImage">
+    <div id="propertyMap">
+        <span class="lat">39.1679000854492</span>
+        <span class="lng">-86.5235977172852</span>
+        <span class="name">IMU</span>
+        <span class="address"></span>
+    </div>
+</div>
+<div id="map_canvas" class="map-position3"></div>
+</form>
+
+<?php
+    class LandmarkTable extends library_view_helper_Tabler {
+        public function formatRow($row) {
+            $edithref = Zend_Registry::get('ROOTURL')."index/editlandmark/id/".$row['landmarkId'];
+            $deletehref = Zend_Registry::get('ROOTURL')."index/deletelandmark/id/".$row['landmarkId'];
+            $ret  = '<td>' . $row['name'] . '</td>';
+            $ret .= '<td>' . "<a href=\"$edithref\">Edit</a>" . '</td>';
+            $ret .= '<td>' . "<a href=\"$deletehref\">Delete</a>" . '</td>';
+            return $ret;
+        }       
+    }
+
+    $tabler = new LandmarkTable();
+    echo $tabler->showTable($this->paginator, $this, 'landmarkTable', array('Landmarks'));
+?>

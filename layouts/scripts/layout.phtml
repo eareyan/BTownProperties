@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Woodenly
+Version    : 1.0
+Released   : 20100309
+Description: A two-column fixed-width template suitable for small websites.
+
+-->
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<?php $this->headMeta()->appendName('keywords', '')?>
+<?php $this->headMeta()->appendName('description','')?>
+<?php $this->headLink()->appendStylesheet(Zend_Registry::get("CSSPATH").'default.css'); ?>
+<?php $this->headLink()->appendStylesheet(Zend_Registry::get("CSSPATH").'custom.css'); ?>
+<?php $this->headLink()->appendStylesheet(Zend_Registry::get("JSPATH").'fancybox/jquery.fancybox-1.3.4.css'); ?>
+<?php $this->headLink()->appendStylesheet('http://code.google.com/apis/maps/documentation/javascript/examples/default.css'); ?>
+
+
+<?php $this->headScript()->appendFile(Zend_Registry::get("JSPATH").'jquery-1.6.2.min.js'); ?>
+<?php $this->headScript()->appendFile(Zend_Registry::get("JSPATH").'fancybox/jquery.mousewheel-3.0.4.pack.js'); ?>
+<?php $this->headScript()->appendFile(Zend_Registry::get("JSPATH").'fancybox/jquery.fancybox-1.3.4.pack.js'); ?>
+
+<?php $this->headScript()->appendFile('http://maps.googleapis.com/maps/api/js?sensor=false'); ?>
+<?php $this->headScript()->appendFile(Zend_Registry::get("JSPATH").'map.js'); ?>
+
+
+
+<?=$this->headMeta()?>
+
+<?=$this->headTitle('BTown Properties')?>
+
+<?=$this->headLink()?>
+<?=$this->headStyle()?>
+<?=$this->headScript()?>
+
+
+<!--[if IE]>
+<link href="<?php echo Zend_Registry::get("CSSPATH").'ie.css'; ?>" rel="stylesheet" type="text/css" />
+<![endif]--> 
+<!--[if IE 6]>
+<link href="<?php echo Zend_Registry::get("CSSPATH").'ie6.css'; ?>" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo">
+                <h1> <a href="<?=Zend_Registry::get("ROOTURL")?>">Btown Properties</a> </h1>
+            </div>
+        </div>
+
+        <?=$this->Menu()?>
+        <?=$this->LoginStatus()?>
+  	
+       <div id="content">
+               <?php if(count($this->messages->getMessages())>0):?>
+                    <div class="success"><?php echo current($this->messages->getMessages()); ?></div>
+               <?php endif;?>	
+            <?=$this->layout()->content ?>
+       </div>     
+        
+        <?=$this->Footer()?>
+    </div>
+</body>
+</html>
